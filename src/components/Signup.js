@@ -19,41 +19,47 @@ function Signup() {
       // Add user data to Firestore or perform other actions if needed
       console.log('User signed up:', userCredential.user.uid);
       // Redirect to home page after successful signup
-      // window.location.href = '/';
+      window.location.href = '/';
     } catch (error) {
       setError(error.message);
     }
   };
 
   return (
-    <div>
+    <div className='signup-container'>
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Full Name"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-        />
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-        />
-        <button type="submit">Sign Up</button>
+      <form onSubmit={handleSubmit} >
+        <div className="form-group">
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Full Name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
+          <input
+            type="tel"
+            className="form-control"
+            placeholder="Phone Number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+          <button type="submit">Sign Up</button>
+        </div>
       </form>
       {error && <p>{error}</p>}
       <p>
