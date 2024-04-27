@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { auth } from '../firebase/firebaseConfig';
-import './Style.css';
 import { Navbar as BootstrapNavbar, Nav, Button } from 'react-bootstrap';
 
 
@@ -11,6 +10,7 @@ function CustomNavbar() {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user);
+      console.log(user);
     });
 
     return () => unsubscribe();
@@ -21,7 +21,7 @@ function CustomNavbar() {
   };
 
   return (
-    <BootstrapNavbar bg="dark" variant="dark" expand="lg">
+    <BootstrapNavbar bg="dark" variant="dark" expand="lg" sticky="top">
       <BootstrapNavbar.Brand as={Link} to="/">STORE2GO</BootstrapNavbar.Brand>
       <BootstrapNavbar.Toggle aria-controls="basic-navbar-nav" />
       <BootstrapNavbar.Collapse id="basic-navbar-nav">
@@ -30,7 +30,7 @@ function CustomNavbar() {
           <Nav.Link as={Link} to="/">Home</Nav.Link>
           {currentUser ? (
             <>
-              <Nav.Link>{currentUser.displayName}</Nav.Link>
+              <Nav.Link>{currentUser.email}</Nav.Link>
               <Button variant="outline-light" onClick={handleSignOut}>Sign Out</Button>
             </>
           ) : (

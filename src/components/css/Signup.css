@@ -1,12 +1,20 @@
 /* Signup.css */
 
 .signup-container {
-    width: 400px;
+    /* width: 400px;
     margin: auto;
     padding: 50px;
     background-color: rgba(255, 255, 255, 0.13);
     border-radius: 10px;
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+    height: 100vh;
+    background-image: url('./image/Background.jpg');
+    background-size: cover; 
+    background-position: center;
 }
 
 .signup-container h2 {
