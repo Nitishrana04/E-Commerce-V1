@@ -1,0 +1,83 @@
+body {
+    
+    background-image: url('./image/Background.jpg');
+    background-size: cover; 
+    background-position: center;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 400px;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    transform-style: preserve-3d; /* Preserve 3D effect */
+    transform: rotateY(10deg); /* Rotate along Y axis */
+    transition: transform 0.5s; /* Add transition for smooth effect */
+}
+
+.form-container:hover {
+    transform: rotateY(0deg); /* Rotate back to normal on hover */
+}
+
+.form-container h2 {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.form-group input {
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #ffffff;
+    border: none;
+}
+
+.form-group input::placeholder {
+    color: #e5e5e5;
+}
+
+.form-group button {
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.form-group button:hover {
+    background-color: #f2f2f2;
+}
