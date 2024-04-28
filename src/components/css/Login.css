@@ -35,7 +35,9 @@
     text-align: center;
     margin-bottom: 30px;
 }
-
+.form-container p {
+    color: bisque; /* Your original color */
+}
 .form-group {
     margin-bottom: 20px;
 }
